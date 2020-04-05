@@ -17,8 +17,6 @@ p {
 }
 
 .footer-container {
-  background-color: black;
-  color: white;
   padding: 1rem 7rem;
 }
 
@@ -37,7 +35,7 @@ p {
   scrollbar-width: thin;
 }
 
-.cloth-img-list--item {
+.cloth-img-list-item {
   border: 1px solid #f2f2f2;
   cursor: pointer;
   display: flex;
@@ -60,10 +58,36 @@ p {
   margin-top: 0.625rem;
   overflow-y: hidden;
   width: 100%;
-  scrollbar-width: thin;
+  transition: transform 300ms ease 100ms;
 }
 
-.img-list--item {
+.img-list:hover .img-list-item {
+  transform: translateX(-25%);
+}
+
+.img-list-item:hover ~ .img-list-item {
+  transform: translateX(25%);
+}
+
+.img-list-item:hover {
+  transform: scale(1.5) !important;
+  height: 15.25rem;
+}
+
+.img-list-item a {
+  display: none;
+  width: 100%;
+  text-align: center;
+  opacity: 0.3;
+}
+
+.img-list-item:hover a {
+  display: block;
+  position: absolute;
+  bottom: 2.5rem;
+}
+
+.img-list-item {
   border: 1px solid #f2f2f2;
   cursor: pointer;
   display: flex;
@@ -76,9 +100,7 @@ p {
 }
 
 .img-fluid {
-  max-height: 6.25rem;
   max-width: 6rem;
-  height: auto;
 }
 
 ::-webkit-scrollbar-track
